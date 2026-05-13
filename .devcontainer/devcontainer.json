@@ -1,0 +1,27 @@
+{
+  "name": "ghtun-warzone",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  },
+  "postAttachCommand": "sudo bash /app/setup.sh",
+  "portsAttributes": {
+    "443": {
+      "label": "xray-ws",
+      "protocol": "https",
+      "onAutoForward": "silent"
+    }
+  },
+  "forwardPorts": [443],
+  "hostRequirements": {
+    "cpus": 2
+  }
+}
