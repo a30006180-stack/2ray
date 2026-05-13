@@ -12,7 +12,7 @@
       "version": "latest"
     }
   },
-  "postAttachCommand": "sudo bash /app/setup.sh",
+  "postAttachCommand": "sudo -E bash /app/setup.sh",
   "portsAttributes": {
     "443": {
       "label": "xray-ws",
